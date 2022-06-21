@@ -46,6 +46,10 @@ func generateAdd(rv reflect.Value) (string, error) {
 			return false
 		}
 
+		if field == nil {
+			return true
+		}
+
 		if field.isTableName {
 			tableName = field.name
 

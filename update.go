@@ -46,6 +46,10 @@ func generateUpdate(rv reflect.Value) (string, error) {
 			return false
 		}
 
+		if field == nil {
+			return true
+		}
+
 		if field.primaryKey {
 			primaries = append(primaries, field.getNamedEqualField())
 
